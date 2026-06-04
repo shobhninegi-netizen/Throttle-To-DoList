@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Throttle-To-Do-List</title>
+    <style>
+            /* Reset */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+/* Body */
+
+body{
+    background-color:#0f0f0f;
+    color:white;
+    font-family:Segoe UI, sans-serif;
+    line-height:1.6;
+    padding:20px;
+    background-image:  url("glen-alejandro-EQ7vori1wJU-unsplash.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    color:white;
+    font-family: Sedoe UI,sans-serif;
+    line-height:1.6;
+    min-height: 100vh;
+}
+
+/* Header */
+
+header{
+    text-align:center;
+    padding:30px;
+    background:#1a1a1a;
+    border-radius:15px;
+    margin-bottom:20px;
+    box-shadow:0 0 15px rgba(255,0,0,0.2);
+}
+
+header h1{
+    color:#ff3b3b;
+    font-size:3rem;
+    letter-spacing:4px;
+}
+
+header p{
+    color:#cfcfcf;
+    margin-top:10px;
+}
+
+/* Sections */
+
+section{
+    background:#1b1b1b;
+    padding:20px;
+    margin:20px 0;
+    border-radius:12px;
+    box-shadow:0 0 10px rgba(255,255,255,0.05);
+}
+
+section h2{
+    color:#ff3b3b;
+    margin-bottom:15px;
+}
+
+/* Labels */
+
+label{
+    display:block;
+    margin-bottom:5px;
+    font-weight:bold;
+}
+
+/* Inputs */
+
+input,
+select{
+    width:100%;
+    padding:12px;
+    border:none;
+    border-radius:8px;
+    background:#2a2a2a;
+    color:white;
+    font-size:16px;
+}
+
+/* Button */
+
+button{
+    width:100%;
+    padding:14px;
+    background:#ff3b3b;
+    color:white;
+    border:none;
+    border-radius:8px;
+    font-size:16px;
+    font-weight:bold;
+    cursor:pointer;
+    transition:0.3s;
+}
+
+button:hover{
+    background:#ff1a1a;
+    transform:scale(1.02);
+}
+
+/* Dashboard */
+
+section p{
+    margin:8px 0;
+}
+
+/* Lists */
+
+ul{
+    list-style:none;
+}
+
+li{
+    background:#2a2a2a;
+    padding:12px;
+    margin:10px 0;
+    border-radius:8px;
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    margin-top:30px;
+    padding:20px;
+    color:#aaaaaa;
+}
+
+/* Horizontal Line */
+
+hr{
+    border:none;
+    height:1px;
+    background:#333;
+    margin:20px 0;
+}
+
+/* Responsive */
+
+@media(max-width:600px){
+
+    header h1{
+        font-size:2rem;
+    }
+
+    body{
+        padding:10px;
+    }
+}</style>
+</head>
+<body>
+    <!--website header-->
+    <header>
+         <h1>THROTTLE</h1>
+        <p>Plan your rides.Chase your goals</p>
+        
+        
+    </header>
+    <img src="glen-alejandro-EQ7vori1wJU-unsplash.jpg">
+    <!--task input form-->
+     <section>
+
+        <h2>Add New Task</h2>
+    <label>Taske Name</label>
+    <input id="missionInput" type="text" placeholder="Enter Task">
+    <br><br>
+    <!--Due Date-->
+    <label>Due Date</label>
+   <input type="date">
+   <br><br>
+   <!--priority-->
+    <label>Priority</label>
+    <select>
+        <option>High</option>
+        <option>Medium</option>
+        <option>Low</option>
+    </select>
+
+    <br><br>
+    <!--category-->
+    <label>Priority</label>
+    <select>
+        <option>Study</option>
+        <option>Travel</option>
+        <option>Work</option>
+        <option>Personal</option>
+    </select>
+
+    <br><br>
+     
+    <!--Add Task Button-->
+    <button id="escalateTask"  >Add Task</button>
+</section>
+<hr>
+<!--Dash-Board Section-->
+<section>
+    <h2>Dashboard</h2>
+    <p>Total Tasks:0</p>
+    <p>Completed Tasks:0</p>
+    <p>Pending Tasks:0</p>
+</section>
+
+<hr>
+
+    <!-- Pending Tasks -->
+    <section>
+
+        <h2>Pending Tasks</h2>
+
+        <ul id="pendingMissions">
+            <!-- Tasks will appear here -->
+        </ul>
+
+    </section>
+
+    <hr>
+
+    <!-- Completed Tasks -->
+    <section>
+
+        <h2>Completed Tasks</h2>
+
+        <ul>
+            <!-- Completed tasks will appear here -->
+        </ul>
+
+    </section>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>Discipline Today, Freedom Tomorrow.</p>
+
+    </footer>
+    <script>
+        
+        
+
+const missionInput = document.querySelector("#missionInput");
+const escalateTask = document.querySelector("#escalateTask");
+const pendingMissions = document.querySelector("#pendingMissions");
+escalateTask.addEventListener("click",function(){
+    const taskText = missionInput.value;
+    const lesGo = escalateTask.value;
+    const itsLeft = pendingMissions.value;           
+    if (taskText ==="") {
+    alert("Fuel the ride with a mission first.");
+
+    return;
+}
+    </script>
+
+</body>
+</html>
